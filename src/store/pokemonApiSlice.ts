@@ -1,6 +1,5 @@
 // Need to use the React-specific entry point to import `createApi`
-import { createApi } from "@reduxjs/toolkit/query/react";
-import { axiosBaseQuery } from "./baseQuery";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export type Pokemon = {
   id: number;
@@ -12,7 +11,7 @@ export type Pokemon = {
 type PokemonApiResponse = Pokemon;
 
 export const pokemonApiSlice = createApi({
-  baseQuery: axiosBaseQuery({ baseUrl: "https://pokeapi.co/api/v2/pokemon" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://pokeapi.co/api/v2/pokemon" }),
   reducerPath: "pokemonApi",
   refetchOnMountOrArgChange: 30, // this is the most common cache timing adjustment
   tagTypes: ["Pokemon"], // Tag types are used for caching and invalidation.
