@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useGetUsers } from "../hooks/useGetUsers";
+import { UserCard } from "./UserCard";
 import { UserList } from "./UserList";
 
 export const Users = () => {
@@ -20,6 +21,7 @@ export const Users = () => {
         onSelect={(id) => setSelectedId(id)}
       />
       <hr />
+      {selectedId && <UserCard id={selectedId} />}
     </>
   );
 };
