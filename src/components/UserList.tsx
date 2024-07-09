@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { User } from "../api/user";
+import { User } from "../store/usersApiSlice";
 
 const Container = styled.div`
   display: flex;

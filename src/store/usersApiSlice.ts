@@ -22,8 +22,6 @@ export const usersApiSlice = createApi({
       query: () => {
         return { url: `/` };
       },
-      // `providesTags` determines which 'tag' is attached to the
-      // cached data returned by the query.
       providesTags: (_result, _error) => [{ type: USERS_TAG }],
     }),
     getUserById: build.query<UserApiResponse, string>({
@@ -34,7 +32,7 @@ export const usersApiSlice = createApi({
       // cached data returned by the query.
       providesTags: (_result, _error, id) => [{ type: USERS_TAG, id }],
     }),
-    updateUser: build.mutation<User, User>({
+    updateUser: build.mutation<UserApiResponse, User>({
       query: ({ id, ...rest }) => ({
         url: `/${id}`,
         method: "PUT",

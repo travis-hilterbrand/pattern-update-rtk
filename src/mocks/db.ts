@@ -1,5 +1,5 @@
 import { factory, primaryKey } from "@mswjs/data";
-import { User } from "../api/user";
+import { User } from "../store/usersApiSlice";
 
 export const mockUsers: User[] = [
   {
