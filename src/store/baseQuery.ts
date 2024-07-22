@@ -13,7 +13,7 @@ export const baseQueryWithDelay = (
 ): BaseQueryFn<FetchArgs, unknown, FetchBaseQueryError> => {
   return async ({ url, ...rest }, api, extraOptions) => {
     await sleep(500);
-    let result = await baseQuery(
+    const result = await baseQuery(
       { url: joinUrls(baseUrl, url), ...rest },
       api,
       extraOptions
