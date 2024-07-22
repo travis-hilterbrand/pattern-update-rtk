@@ -81,3 +81,7 @@ updateUser: build.mutation<UserApiResponse, User>({
   },
 }),
 ```
+
+> IMPORTANT NOTE
+
+For simplicity/ robustness, this project uses a mocked API that is enabled with `mock service worker` https://mswjs.io/.
